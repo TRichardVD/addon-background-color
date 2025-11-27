@@ -10,6 +10,6 @@ export default defineConfig({
       // or more restrictive:
       // 'https://*/*',
       // 'http://*/*',
-    ],
+    ]
   },
 });

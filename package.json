@@ -15,7 +15,6 @@
     "lint:fix": "eslint . --fix",
     "lint:check": "eslint . --max-warnings=0",
     "postinstall": "wxt prepare",
-    "test": "npm run lint && npm run unit || echo \"no tests\"",
     "pack:zip": "wxt build && npx web-ext build -s .output/extension -a ./dist-artifacts"
   },
   "dependencies": {
