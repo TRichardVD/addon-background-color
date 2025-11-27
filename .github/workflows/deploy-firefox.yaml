@@ -17,5 +17,5 @@ jobs:
                 --api-key ${{ secrets.FIREFOX_JWT_ISSUER }} \
                 --api-secret ${{ secrets.FIREFOX_JWT_SECRET }} \
                 --channel unlisted \
-                --source-dir . \
-                --artifacts-dir ./.output/firefox-mv2
+                --source-dir ./.output/firefox-mv2 \
+                --artifacts-dir ./.output/
