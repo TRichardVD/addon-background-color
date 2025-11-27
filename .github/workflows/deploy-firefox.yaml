@@ -1,0 +1,20 @@
+on : [release]
+jobs:
+    publisher:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v5
+            - run: npm ci
+            - run: npm audit
+            - run: npm run lint:check
+            - run: npm run zip:firefox
+            - run: npm run build:firefox
+            - run: npm run build:firefox
+            - name: Sign with web-ext
+              run: |
+                npx web-ext sign \
+                --api-key ${{ secrets.FIREFOX_JWT_ISSUER }} \
+                --api-secret ${{ secrets.FIREFOX_JWT_SECRET }} \
+                --channel unlisted \
+                --source-dir . \
+                --artifacts-dir ./.output/addon-background-color-0.0.1-firefox.zip

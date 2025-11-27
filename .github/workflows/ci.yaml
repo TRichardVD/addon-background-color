@@ -13,9 +13,3 @@ jobs:
             - uses: actions/upload-artifact@v4
               with:
                 path: ./.output/addon-background-color-0.0.1-firefox.zip
-            - uses: trmcnvn/firefox-addon@v1
-              with:
-                xpi: .output/addon-background-color-0.0.1-firefox.zip
-                manifest: ./.output/firefox-mv2/manifest.json
-                api-key: ${{ secrets.FIREFOX_JWT_ISSUER }}
-                api-secret: ${{ secrets.FIREFOX_JWT_SECRET }}
