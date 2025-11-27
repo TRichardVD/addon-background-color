@@ -7,8 +7,10 @@ jobs:
             - run: npm ci
             - run: npm audit
             - run: npm run lint:check
+            - run: mkdir ./.output
             - run: npm run zip:firefox
             - run: ls
+            - run: ls ./.output
             - uses: actions/upload-artifact@v4
               with:
                 path: ./.output/addon-background-color-0.0.1-firefox.zip
